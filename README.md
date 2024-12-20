@@ -13,7 +13,27 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/CloudCrafter-DeOp/executable-files-lister.git
-2. Запускаете скрипт:
-   ```bash
-   bash list_executables.sh
+   git clone https://github.com/CloudCrafter-DeOp/docker-executable-files-lister.git
+   ```
+2. Запускаете скрипт внутри докер контейнера напрямую или используя Make:
+   
+## Установка с использованием docker
+> В среде Windows скрипт запускать при помощи Git bash
+
+### Служебное
+- сборка контейнера
+
+   ```docker
+   docker build -t alpine-executables .
+   ```
+- запуск скрипта в контейнере и последующее удаление констейнера
+   ```docker
+   docker run --rm -v $(pwd)/vendor:/app/vendor alpine-executables
+   ```
+
+## Установка с использованием утилиты Make
+### Служебное
+
+- `make install` - сборка контейнера
+- `make up` - запуск контейнеров
+- `make clean` - Очистка локального каталога вывода

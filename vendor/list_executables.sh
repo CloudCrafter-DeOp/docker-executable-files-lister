@@ -4,7 +4,7 @@
 directories=("/sbin" "/usr/sbin")
 
 # Имя файла куда будет сохранён результат
-output_file="executable_files_list.txt"
+output_file="/app/vendor/executable_files_list.txt"
 
 > "$output_file"
 
